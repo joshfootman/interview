@@ -1,6 +1,6 @@
 const Features = ["point", "polygon", "radius"] as const
 
-type UnionOfFeatures = (typeof Features)[number]
+type UnionOfFeatures = undefined
 //         ?^ 'point' | 'polygon' | 'radius'
 
 type MappedFeatureFunction = undefined
