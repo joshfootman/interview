@@ -10,7 +10,10 @@ Write some code so that the two types match the comment below.
 type UnionOfFeatures = (typeof Features)[number]
 
 type MappedFeatureFunction = {
-  [Property in UnionOfFeatures]: () => void
+  [Property in UnionOfFeatures]: {
+    type: `${Property}-type`
+    onClick: () => void
+  }
 }
 ```
 

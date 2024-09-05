@@ -1,7 +1,21 @@
 const Features = ["point", "polygon", "radius"] as const
 
-type UnionOfFeatures = undefined
+type UnionOfFeatures = (typeof Features)[number]
 //         ?^ 'point' | 'polygon' | 'radius'
 
 type MappedFeatureFunction = undefined
-//         ?^ { point: () => void; polygon: () => void; radius: () => void }
+/*         ?^  { 
+                 point: {
+                   type: 'point-option',
+                   onClick: () => void
+                 },
+                 polygon: {
+                   type: 'polygon-option',
+                   onClick: () => void
+                 },
+                 radius: {
+                   type: 'radius-option',
+                   onClick: () => void
+                 },
+               }
+*/
